@@ -8,7 +8,7 @@ const routes = asyncRoutes;
 module.exports = [
   // mock get all routes form server
   {
-    url: "/vue-element-admin/routes",
+    url: "/tack/routes",
     type: "get",
     response: _ => {
       return {

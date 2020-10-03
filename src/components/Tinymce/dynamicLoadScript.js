@@ -1,7 +1,7 @@
 let callbacks = []
 
 function loadedTinymce() {
-  // to fixed https://github.com/PanJiaChen/vue-element-admin/issues/2144
+  // to fixed https://github.com/txzh007/tack/issues/2144
   // check is successfully downloaded script
   return window.tinymce
 }

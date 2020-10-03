@@ -408,7 +408,7 @@ const asyncRoutes = [
     component: "layout",
     children: [
       {
-        path: "https://github.com/PanJiaChen/vue-element-admin",
+        path: "https://github.com/txzh007/tack",
         title: "externalLink",
         icon: "link"
       }

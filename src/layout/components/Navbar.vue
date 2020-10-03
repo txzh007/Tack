@@ -39,7 +39,7 @@
           </router-link>
           <a
             target="_blank"
-            href="https://github.com/PanJiaChen/vue-element-admin/"
+            href="https://github.com/txzh007/tack/"
           >
             <el-dropdown-item>
               {{ $t("navbar.github") }}
@@ -47,7 +47,7 @@
           </a>
           <a
             target="_blank"
-            href="https://panjiachen.github.io/vue-element-admin-site/#/"
+            href="https://txzh007.github.io/tack-site/#/"
           >
             <el-dropdown-item>Docs</el-dropdown-item>
           </a>

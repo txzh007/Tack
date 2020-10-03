@@ -1,11 +1,5 @@
 module.exports = {
-  title: 'Vue Element Admin',
+  title: "Tack 一个后端管理模版",
 
-  /**
-   * @type {boolean} true | false
-   * @description Whether support pinyin search in headerSearch
-   * Bundle size minified 47.3kb,minified + gzipped 63kb
-   */
-
-  errorLog: 'production'
-}
+  errorLog: "production"
+};
