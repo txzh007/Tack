@@ -16,19 +16,19 @@ const chartsRouter = {
       path: 'keyboard',
       component: () => import('@/views/charts/keyboard'),
       name: 'KeyboardChart',
-      meta: { title: 'keyboardChart',  }
+      meta: { title: 'keyboardChart' }
     },
     {
       path: 'line',
       component: () => import('@/views/charts/line'),
       name: 'LineChart',
-      meta: { title: 'lineChart',  }
+      meta: { title: 'lineChart' }
     },
     {
       path: 'mixChart',
       component: () => import('@/views/charts/mixChart'),
       name: 'MixChart',
-      meta: { title: 'mixChart',  }
+      meta: { title: 'mixChart' }
     }
   ]
 }

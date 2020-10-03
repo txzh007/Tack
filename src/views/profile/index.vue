@@ -27,35 +27,35 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import UserCard from "./components/UserCard";
-import Activity from "./components/Activity";
-import Timeline from "./components/Timeline";
-import Account from "./components/Account";
+import { mapGetters } from 'vuex'
+import UserCard from './components/UserCard'
+import Activity from './components/Activity'
+import Timeline from './components/Timeline'
+import Account from './components/Account'
 
 export default {
-  name: "Profile",
+  name: 'Profile',
   components: { UserCard, Activity, Timeline, Account },
   data() {
     return {
       user: {},
-      activeTab: "activity"
-    };
+      activeTab: 'activity'
+    }
   },
   computed: {
-    ...mapGetters(["name", "avatar"])
+    ...mapGetters(['name', 'avatar'])
   },
   created() {
-    this.getUser();
+    this.getUser()
   },
   methods: {
     getUser() {
       this.user = {
         name: this.name,
-        email: "admin@test.com",
+        email: 'admin@test.com',
         avatar: this.avatar
-      };
+      }
     }
   }
-};
+}
 </script>

@@ -9,5 +9,5 @@ const getters = {
   introduction: state => state.user.introduction,
   permission_routes: state => state.permission.routes,
   errorLogs: state => state.errorLog.logs
-};
-export default getters;
+}
+export default getters

@@ -5,16 +5,16 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import adminDashboard from "./admin";
+import { mapGetters } from 'vuex'
+import adminDashboard from './admin'
 
 export default {
-  name: "Dashboard",
+  name: 'Dashboard',
   components: { adminDashboard },
   data() {
-    return {};
+    return {}
   },
   computed: {},
   created() {}
-};
+}
 </script>

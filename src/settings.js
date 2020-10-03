@@ -1,5 +1,5 @@
 module.exports = {
-  title: "Vue Element Admin",
+  title: 'Vue Element Admin',
 
   /**
    * @type {boolean} true | false
@@ -7,5 +7,5 @@ module.exports = {
    * Bundle size minified 47.3kb,minified + gzipped 63kb
    */
 
-  errorLog: "production"
-};
+  errorLog: 'production'
+}

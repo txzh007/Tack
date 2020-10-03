@@ -3,7 +3,7 @@
     <div slot="header" class="box-card-header">
       <img
         src="https://wpimg.wallstcn.com/e7d23d71-cf19-4b90-a1cc-f56af8c0903d.png"
-      />
+      >
     </div>
     <div style="position:relative;">
       <pan-thumb :image="avatar" class="panThumb" />
@@ -29,9 +29,9 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import PanThumb from "@/components/PanThumb";
-import Mallki from "@/components/TextHoverEffect/Mallki";
+import { mapGetters } from 'vuex'
+import PanThumb from '@/components/PanThumb'
+import Mallki from '@/components/TextHoverEffect/Mallki'
 
 export default {
   components: { PanThumb, Mallki },
@@ -39,10 +39,10 @@ export default {
   filters: {
     statusFilter(status) {
       const statusMap = {
-        success: "success",
-        pending: "danger"
-      };
-      return statusMap[status];
+        success: 'success',
+        pending: 'danger'
+      }
+      return statusMap[status]
     }
   },
   data() {
@@ -51,12 +51,12 @@ export default {
         article_count: 1024,
         pageviews_count: 1024
       }
-    };
+    }
   },
   computed: {
-    ...mapGetters(["name", "avatar"])
+    ...mapGetters(['name', 'avatar'])
   }
-};
+}
 </script>
 
 <style lang="scss">

@@ -1,16 +1,16 @@
-import Vue from "vue";
-import Router from "vue-router";
+import Vue from 'vue'
+import Router from 'vue-router'
 
-Vue.use(Router);
+Vue.use(Router)
 
 /* Layout */
-import Layout from "@/layout";
+import Layout from '@/layout'
 
 /* Router Modules */
-import componentsRouter from "./modules/components";
-import chartsRouter from "./modules/charts";
-import tableRouter from "./modules/table";
-import nestedRouter from "./modules/nested";
+import componentsRouter from './modules/components'
+import chartsRouter from './modules/charts'
+import tableRouter from './modules/table'
+import nestedRouter from './modules/nested'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -36,89 +36,89 @@ import nestedRouter from "./modules/nested";
  */
 export const constantRoutes = [
   {
-    path: "/redirect",
+    path: '/redirect',
     component: Layout,
     hidden: true,
     children: [
       {
-        path: "/redirect/:path(.*)",
-        component: () => import("@/views/redirect/index")
+        path: '/redirect/:path(.*)',
+        component: () => import('@/views/redirect/index')
       }
     ]
   },
   {
-    path: "/login",
-    component: () => import("@/views/login/index"),
+    path: '/login',
+    component: () => import('@/views/login/index'),
     hidden: true
   },
   {
-    path: "/auth-redirect",
-    component: () => import("@/views/login/auth-redirect"),
+    path: '/auth-redirect',
+    component: () => import('@/views/login/auth-redirect'),
     hidden: true
   },
   {
-    path: "/404",
-    component: () => import("@/views/error-page/404"),
+    path: '/404',
+    component: () => import('@/views/error-page/404'),
     hidden: true
   },
   {
-    path: "/401",
-    component: () => import("@/views/error-page/401"),
+    path: '/401',
+    component: () => import('@/views/error-page/401'),
     hidden: true
   },
   {
-    path: "/",
+    path: '/',
     component: Layout,
-    redirect: "/dashboard",
+    redirect: '/dashboard',
     children: [
       {
-        path: "dashboard",
-        component: () => import("@/views/dashboard/index"),
-        name: "Dashboard",
-        meta: { title: "dashboard", icon: "dashboard" }
+        path: 'dashboard',
+        component: () => import('@/views/dashboard/index'),
+        name: 'Dashboard',
+        meta: { title: 'dashboard', icon: 'dashboard' }
       }
     ]
   },
   {
-    path: "/documentation",
+    path: '/documentation',
     component: Layout,
     children: [
       {
-        path: "index",
-        component: () => import("@/views/documentation/index"),
-        name: "Documentation",
-        meta: { title: "documentation", icon: "documentation" }
+        path: 'index',
+        component: () => import('@/views/documentation/index'),
+        name: 'Documentation',
+        meta: { title: 'documentation', icon: 'documentation' }
       }
     ]
   },
   {
-    path: "/guide",
+    path: '/guide',
     component: Layout,
-    redirect: "/guide/index",
+    redirect: '/guide/index',
     children: [
       {
-        path: "index",
-        component: () => import("@/views/guide/index"),
-        name: "Guide",
-        meta: { title: "guide", icon: "guide" }
+        path: 'index',
+        component: () => import('@/views/guide/index'),
+        name: 'Guide',
+        meta: { title: 'guide', icon: 'guide' }
       }
     ]
   },
   {
-    path: "/profile",
+    path: '/profile',
     component: Layout,
-    redirect: "/profile/index",
+    redirect: '/profile/index',
     hidden: true,
     children: [
       {
-        path: "index",
-        component: () => import("@/views/profile/index"),
-        name: "Profile",
-        meta: { title: "profile", icon: "user" }
+        path: 'index',
+        component: () => import('@/views/profile/index'),
+        name: 'Profile',
+        meta: { title: 'profile', icon: 'user' }
       }
     ]
   }
-];
+]
 
 /**
  * asyncRoutes
@@ -359,14 +359,14 @@ const createRouter = () =>
     // mode: 'history', // require service support
     scrollBehavior: () => ({ y: 0 }),
     routes: constantRoutes
-  });
+  })
 
-const router = createRouter();
+const router = createRouter()
 
 // Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
 export function resetRouter() {
-  const newRouter = createRouter();
-  router.matcher = newRouter.matcher; // reset router
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // reset router
 }
 
-export default router;
+export default router

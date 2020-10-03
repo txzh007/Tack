@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import { AppMain, Navbar, Settings, Sidebar } from "./components";
-import { mapState } from "vuex";
+import { AppMain, Navbar, Settings, Sidebar } from './components'
+import { mapState } from 'vuex'
 
 export default {
-  name: "Layout",
+  name: 'Layout',
   components: {
     AppMain,
     Navbar,
@@ -32,15 +32,15 @@ export default {
         hideSidebar: !this.sidebar.opened,
         openSidebar: this.sidebar.opened,
         withoutAnimation: this.sidebar.withoutAnimation
-      };
+      }
     }
   },
   methods: {
     handleClickOutside() {
-      this.$store.dispatch("app/closeSideBar", { withoutAnimation: false });
+      this.$store.dispatch('app/closeSideBar', { withoutAnimation: false })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

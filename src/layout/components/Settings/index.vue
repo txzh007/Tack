@@ -20,24 +20,24 @@
 </template>
 
 <script>
-import ThemePicker from "@/components/ThemePicker";
+import ThemePicker from '@/components/ThemePicker'
 
 export default {
   components: { ThemePicker },
   data() {
-    return {};
+    return {}
   },
   computed: {
     isShowJob() {
-      return this.$store.getters.language === "zh";
+      return this.$store.getters.language === 'zh'
     },
 
     lang() {
-      return this.$store.getters.language;
+      return this.$store.getters.language
     }
   },
   methods: {}
-};
+}
 </script>
 
 <style lang="scss" scoped>
