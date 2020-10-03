@@ -1,6 +1,6 @@
 # Tack
 
-## 这是一个基于[tack-i18n](https://github.com/txzh007/tack/tree/i18n)的修改版
+## 这是一个基于[vue-element-admin-i18n](https://github.com/PanJiaChen/vue-element-admin/tree/i18n)的修改版
 
 此项目 基于 vue-cli 进行构建，若发现问题，欢迎提 issue。
 
