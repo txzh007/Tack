@@ -1,41 +1,21 @@
-import request from '@/utils/request'
+import { get, post, put, del } from "@/utils/request";
 
 export function fetchList(query) {
-  return request({
-    url: '/tack/article/list',
-    method: 'get',
-    params: query
-  })
+  return get("/tack/article/list", query);
 }
 
 export function fetchArticle(id) {
-  return request({
-    url: '/tack/article/detail',
-    method: 'get',
-    params: { id }
-  })
+  return get("/tack/article/detail", { id });
 }
 
 export function fetchPv(pv) {
-  return request({
-    url: '/tack/article/pv',
-    method: 'get',
-    params: { pv }
-  })
+  return get("/tack/article/pv", { pv });
 }
 
 export function createArticle(data) {
-  return request({
-    url: '/tack/article/create',
-    method: 'post',
-    data
-  })
+  return post("/tack/article/create", data);
 }
 
 export function updateArticle(data) {
-  return request({
-    url: '/tack/article/update',
-    method: 'post',
-    data
-  })
+  return post("/tack/article/update", data);
 }

@@ -1,8 +1,5 @@
-import request from '@/utils/request'
+import { get, post, put, del } from "@/utils/request";
 
 export function getRoutes() {
-  return request({
-    url: '/tack/routes',
-    method: 'get'
-  })
+  return get("/tack/routes");
 }

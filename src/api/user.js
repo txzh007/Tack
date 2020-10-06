@@ -1,24 +1,13 @@
-import request from '@/utils/request'
+import { get, put, post, del } from "@/utils/request";
 
 export function login(data) {
-  return request({
-    url: '/tack/user/login',
-    method: 'post',
-    data
-  })
+  return post("/tack/user/login", data);
 }
 
 export function getInfo(token) {
-  return request({
-    url: '/tack/user/info',
-    method: 'get',
-    params: { token }
-  })
+  return get("/tack/user/info", { token });
 }
 
 export function logout() {
-  return request({
-    url: '/tack/user/logout',
-    method: 'post'
-  })
+  return post("/tack/user/logout");
 }
