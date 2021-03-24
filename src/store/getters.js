@@ -12,6 +12,6 @@ const getters = {
   isEdit: state => state.curd.isEdit,
   isView: state => state.curd.isView,
   selectItems: state => state.curd.selectItems,
-  roles: state => state.permission.roles
-};
-export default getters;
+  roles: state => state.permission.roles,
+}
+export default getters

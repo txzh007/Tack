@@ -5,13 +5,9 @@ const user = require('./user')
 const role = require('./role')
 const article = require('./article')
 const search = require('./remote-search')
+const temp = require('./temp')
 
-const mocks = [
-  ...user,
-  ...role,
-  ...article,
-  ...search
-]
+const mocks = [...user, ...role, ...article, ...search, ...temp]
 
 // for front mock
 // please use it cautiously, it will redefine XMLHttpRequest,
@@ -40,7 +36,7 @@ function mockXHR() {
         result = respond({
           method: type,
           body: JSON.parse(body),
-          query: param2Obj(url)
+          query: param2Obj(url),
         })
       } else {
         result = respond
@@ -56,5 +52,5 @@ function mockXHR() {
 
 module.exports = {
   mocks,
-  mockXHR
+  mockXHR,
 }

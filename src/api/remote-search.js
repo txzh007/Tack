@@ -1,9 +1,9 @@
-import { get, post, put, del } from "@/utils/request";
+import request from '@/utils/request'
 
 export function searchUser(name) {
-  return get("/tack/search/user", { name });
+  return request.get('/tack/search/user', { name })
 }
 
 export function transactionList(query) {
-  return get("/tack/transaction/list", query);
+  return request.get('/tack/transaction/list', query)
 }

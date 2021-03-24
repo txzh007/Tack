@@ -14,90 +14,90 @@
 // 供应商列表字段
 const mdVendor = [
   {
-    type: "radio",
+    type: 'radio',
     width: 50,
-    key: "id"
+    key: 'id',
   },
   {
-    title: "vendorname",
-    key: "vendorname",
+    title: 'vendorname',
+    key: 'vendorname',
     flag: 1,
     type: 1,
     width: 200,
     isSearch: 1,
     isAdd: 1,
     isEdit: 1,
-    sortable: true
+    sortable: true,
   },
   {
-    title: "vendorcode",
-    key: "vendorcode",
+    title: 'vendorcode',
+    key: 'vendorcode',
     flag: 1,
     type: 1,
     width: 200,
     isAdd: 0,
-    sortable: true
+    sortable: true,
   },
   {
-    title: "unicreditcode",
-    key: "unicreditcode",
+    title: 'unicreditcode',
+    key: 'unicreditcode',
     flag: 1,
     type: 1,
     width: 200,
     isAdd: 1,
     isEdit: 1,
-    sortable: true
+    sortable: true,
   },
   {
-    title: "vendorcontact",
-    key: "vendorcontact",
+    title: 'vendorcontact',
+    key: 'vendorcontact',
     flag: 1,
     type: 1,
     width: 200,
     isAdd: 1,
-    isEdit: 1
+    isEdit: 1,
   },
   {
-    title: "vendortel",
-    key: "vendortel",
+    title: 'vendortel',
+    key: 'vendortel',
     flag: 1,
     type: 1,
     width: 200,
     isSearch: 0,
     isEdit: 1,
-    isAdd: 1
+    isAdd: 1,
   },
   {
-    title: "vendoraddress",
-    key: "vendoraddress",
+    title: 'vendoraddress',
+    key: 'vendoraddress',
     flag: 1,
     type: 1,
     width: 200,
     isAdd: 1,
-    isEdit: 1
+    isEdit: 1,
   },
   {
-    title: "fax",
-    key: "fax",
+    title: 'fax',
+    key: 'fax',
     flag: 1,
     type: 1,
     width: 200,
     isAdd: 1,
-    isEdit: 1
+    isEdit: 1,
   },
   {
-    title: "email",
-    key: "email",
+    title: 'email',
+    key: 'email',
     flag: 1,
     type: 1,
     width: 200,
     isAdd: 1,
-    isEdit: 1
+    isEdit: 1,
   },
 
   {
-    title: "vendortype",
-    key: "typeid",
+    title: 'vendortype',
+    key: 'typeid',
     flag: 1,
     type: 2,
     width: 200,
@@ -105,128 +105,128 @@ const mdVendor = [
     isAdd: 1,
     isEdit: 1,
     isSearch: 1,
-    url: "dictDetail/view?id=16"
+    url: 'dictDetail/view?id=16',
   },
 
   {
-    title: "countrytypename",
-    key: "countrytype",
+    title: 'countrytypename',
+    key: 'countrytype',
     flag: 1,
     type: 2,
     width: 200,
     isAdd: 1,
     isEdit: 1,
-    url: "sysDictD/view?typeid=30"
+    url: 'sysDictD/view?typeid=30',
   },
 
   {
-    title: "currencyname",
-    key: "currency",
+    title: 'currencyname',
+    key: 'currency',
     type: 2,
     width: 200,
     isAdd: 1,
     isEdit: 1,
-    url: "mdCurrency/view"
+    url: 'mdCurrency/view',
   },
   {
-    title: "taxrate",
-    key: "taxrate",
+    title: 'taxrate',
+    key: 'taxrate',
     flag: 1,
     type: 1,
     width: 200,
     isAdd: 1,
-    isEdit: 1
+    isEdit: 1,
   },
   {
-    title: "paytermname",
-    key: "paytermid",
+    title: 'paytermname',
+    key: 'paytermid',
     flag: 0,
     type: 2,
     isAdd: 1,
     isEdit: 1,
     width: 200,
-    url: "mdPaymentTerm/view"
+    url: 'mdPaymentTerm/view',
   },
   {
-    title: "bankaccount",
-    key: "bankaccount",
+    title: 'bankaccount',
+    key: 'bankaccount',
     flag: 0,
     type: 2,
     width: 200,
     isAdd: 0,
     isEdit: 1,
-    url: "mdVendorAccount/view"
+    url: 'mdVendorAccount/view',
   },
   {
-    title: "bankname",
-    key: "bankname",
+    title: 'bankname',
+    key: 'bankname',
     flag: 0,
     type: 1,
     width: 200,
     isAdd: 0,
-    isEdit: 1
+    isEdit: 1,
   },
   {
-    title: "invoicetitle",
-    key: "invoicetitle",
+    title: 'invoicetitle',
+    key: 'invoicetitle',
     flag: 0,
     type: 1,
     width: 200,
     isAdd: 0,
-    isEdit: 1
+    isEdit: 1,
   },
 
   {
-    title: "taxno",
-    key: "taxno",
+    title: 'taxno',
+    key: 'taxno',
     flag: 0,
     type: 1,
     width: 200,
     isAdd: 0,
-    isEdit: 1
+    isEdit: 1,
   },
   {
-    title: "contact",
-    key: "contact",
+    title: 'contact',
+    key: 'contact',
     flag: 0,
     type: 1,
     width: 200,
     isAdd: 0,
-    isEdit: 1
+    isEdit: 1,
   },
   {
-    title: "tel",
-    key: "tel",
+    title: 'tel',
+    key: 'tel',
     flag: 0,
     type: 1,
     width: 200,
     isAdd: 0,
-    isEdit: 1
+    isEdit: 1,
   },
   {
-    title: "address",
-    key: "address",
+    title: 'address',
+    key: 'address',
     flag: 0,
     type: 1,
     width: 200,
     isAdd: 0,
-    isEdit: 1
+    isEdit: 1,
   },
 
-  { title: "memo", key: "memo", flag: 1, type: 1, width: 200, isAdd: 1 },
+  { title: 'memo', key: 'memo', flag: 1, type: 1, width: 200, isAdd: 1 },
   {
-    title: "operation",
-    key: "operation",
+    title: 'operation',
+    key: 'operation',
     flag: 1,
     type: 1,
     width: 200,
     render: [
-      { label: "edit", type: 1 },
-      { label: "view", type: 2 },
-      { label: "delete", type: 3 }
-    ]
-  }
-];
+      { label: 'edit', type: 1 },
+      { label: 'view', type: 2 },
+      { label: 'delete', type: 3 },
+    ],
+  },
+]
 module.exports = {
-  mdVendor
-};
+  mdVendor,
+}
