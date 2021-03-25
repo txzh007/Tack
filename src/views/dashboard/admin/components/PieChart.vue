@@ -3,8 +3,6 @@
 </template>
 
 <script>
-import echarts from 'echarts'
-require('echarts/theme/macarons') // echarts theme
 import resize from './mixins/resize'
 
 export default {
@@ -12,20 +10,20 @@ export default {
   props: {
     className: {
       type: String,
-      default: 'chart'
+      default: 'chart',
     },
     width: {
       type: String,
-      default: '100%'
+      default: '100%',
     },
     height: {
       type: String,
-      default: '300px'
-    }
+      default: '300px',
+    },
   },
   data() {
     return {
-      chart: null
+      chart: null,
     }
   },
   mounted() {
@@ -47,12 +45,12 @@ export default {
       this.chart.setOption({
         tooltip: {
           trigger: 'item',
-          formatter: '{a} <br/>{b} : {c} ({d}%)'
+          formatter: '{a} <br/>{b} : {c} ({d}%)',
         },
         legend: {
           left: 'center',
           bottom: '10',
-          data: ['Industries', 'Technology', 'Forex', 'Gold', 'Forecasts']
+          data: ['Industries', 'Technology', 'Forex', 'Gold', 'Forecasts'],
         },
         series: [
           {
@@ -66,14 +64,14 @@ export default {
               { value: 240, name: 'Technology' },
               { value: 149, name: 'Forex' },
               { value: 100, name: 'Gold' },
-              { value: 59, name: 'Forecasts' }
+              { value: 59, name: 'Forecasts' },
             ],
             animationEasing: 'cubicInOut',
-            animationDuration: 2600
-          }
-        ]
+            animationDuration: 2600,
+          },
+        ],
       })
-    }
-  }
+    },
+  },
 }
 </script>

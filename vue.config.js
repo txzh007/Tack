@@ -68,6 +68,7 @@ module.exports = {
       axios: 'axios',
       'element-ui': 'ELEMENT',
       vuex: 'Vuex',
+      echarts: 'echarts',
     },
   },
   chainWebpack(config) {
