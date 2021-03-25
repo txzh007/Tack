@@ -1,11 +1,12 @@
 # Tack
 
-## 这是一个基于[vue-element-admin-i18n](https://github.com/PanJiaChen/vue-element-admin/tree/i18n)的修改版
+## 这是一个基于[vue-element-admin-i18n](https://github.com/PanJiaChen/vue-element-admin/tree/i18n)的再开发修改版
 
 此项目 基于 vue-cli 进行构建，若发现问题，欢迎提 issue。
 
 - 保留语言切换、各种模版
 - 纯将静态路由改为 静态基础路由+动态路由
+- 将部分组件分离，使用 cdn 引入
 - 删除 tags、前端鉴权(不建议内部 tags，已配动态路由 鉴权删除)
 - 删除移动端适配 (移动端建议重做页面)
 
@@ -20,10 +21,10 @@
 
 ```bash
 # clone the project
-git clone https://github.com/PanJiaChen/vue-element-admin.git
+git clone https://github.com/txzh007/Tack.git
 
 # enter the project directory
-cd vue-element-admin
+cd tack
 
 # install dependency
 npm install
@@ -41,7 +42,8 @@ This will automatically open http://localhost:9527
 npm run build:stage
 
 # build for production environment
-npm run build:prod
+npm run build
+
 ```
 
 ## Advanced
