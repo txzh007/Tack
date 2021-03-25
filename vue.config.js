@@ -60,8 +60,23 @@ module.exports = {
         minRatio: 0.8,
       }),
     ],
+
+    // 在这里配置表示使用cdn资源
+    externals: {
+      vue: 'Vue',
+      'vue-router': 'VueRouter',
+      axios: 'axios',
+      'element-ui': 'ELEMENT',
+      vuex: 'Vuex',
+    },
   },
   chainWebpack(config) {
+    config.plugin('html').tap(args => {
+      args[0].css = require('./config/cdn').css
+      args[0].js = require('./config/cdn').js
+      return args
+    })
+
     // it can improve the speed of the first screen, it is recommended to turn on preload
     // it can improve the speed of the first screen, it is recommended to turn on preload
     config.plugin('preload').tap(() => [

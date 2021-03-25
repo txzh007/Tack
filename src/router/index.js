@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+// import Vue from 'vue'
+// import Router from 'vue-router'
 
-Vue.use(Router)
+// Vue.use(Router)
 
 /* Layout */
 import Layout from '@/layout'
@@ -115,7 +115,7 @@ export const constantRoutes = [
 ]
 
 const createRouter = () =>
-  new Router({
+  new VueRouter({
     // mode: 'history', // require service support
     scrollBehavior: () => ({ y: 0 }),
     routes: constantRoutes,

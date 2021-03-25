@@ -1,11 +1,11 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 
 import Cookies from 'js-cookie'
 
 import 'normalize.css/normalize.css' // a modern alternative to CSS resets
 
-import Element from 'element-ui'
-import './styles/element-variables.scss'
+// import Element from 'element-ui'
+// import './styles/element-variables.scss'
 
 import '@/styles/index.scss' // global css
 
@@ -34,7 +34,7 @@ if (process.env.NODE_ENV === 'production') {
   mockXHR()
 }
 
-Vue.use(Element, {
+Vue.use(ELEMENT, {
   size: Cookies.get('size') || 'medium', // set element-ui default size
   i18n: (key, value) => i18n.t(key, value),
 })
