@@ -1,9 +1,9 @@
 <template>
   <PageView @edit="editRecord" @search="search">
-    <Search slot="search" :param="param" @importData="importData"></Search>
-    <Add slot="add" v-if="isAdd" :fields="fields" :fieldList="columns"></Add>
-    <Edit slot="edit" v-if="isEdit" :fields="eidtFields" :fieldList="columns"></Edit>
-    <ViewRecord slot="view" v-if="isView" :fields="eidtFields" :fieldList="columns"></ViewRecord>
+    <Search slot="search" :param="param" @importData="importData" />
+    <Add v-if="isAdd" slot="add" :fields="fields" :field-list="columns" />
+    <Edit v-if="isEdit" slot="edit" :fields="eidtFields" :field-list="columns" />
+    <ViewRecord v-if="isView" slot="view" :fields="eidtFields" :field-list="columns" />
   </PageView>
 </template>
 
@@ -14,10 +14,9 @@ import Search from './search'
 import Edit from './edit'
 import ViewRecord from './view'
 import common from '@/utils/curd'
-import { mapGetters } from 'vuex'
+const { mapGetters } = Vuex
 export default {
-  name: 'mdVendor',
-  mixins: [common],
+  name: 'MdVendor',
   components: {
     PageView,
     Search,
@@ -25,6 +24,7 @@ export default {
     Edit,
     ViewRecord,
   },
+  mixins: [common],
   data() {
     return {
       fields: {},
@@ -34,6 +34,34 @@ export default {
   },
   computed: {
     ...mapGetters(['isAdd', 'isUpdate', 'isEdit', 'isView']),
+  },
+  watch: {
+    $route(to, from) {
+      console.log('to', to)
+      console.log('from', from)
+      const type = to.name
+      // this.$route.name = type
+      this.columns = this.getAddForm(type)
+      this.columns = this.columns.filter(item => {
+        return item.isAdd === 1
+      })
+      // 构建增加对象
+      this.columns.forEach(item => {
+        this.fields[item.key] = ''
+      })
+    },
+  },
+  created() {
+    console.log('this.columns', this.columns)
+
+    // 过滤查找出需要增加的条件列
+    this.columns = this.columns.filter(item => {
+      return item.isAdd === 1
+    })
+    // 构建增加对象
+    this.columns.forEach(item => {
+      this.fields[item.key] = ''
+    })
   },
   methods: {
     editRecord(val) {
@@ -60,34 +88,6 @@ export default {
     },
     importData(data) {
       console.log(data)
-    },
-  },
-  created() {
-    console.log('this.columns', this.columns)
-
-    // 过滤查找出需要增加的条件列
-    this.columns = this.columns.filter(item => {
-      return item.isAdd === 1
-    })
-    // 构建增加对象
-    this.columns.forEach(item => {
-      this.fields[item.key] = ''
-    })
-  },
-  watch: {
-    $route(to, from) {
-      console.log('to', to)
-      console.log('from', from)
-      const type = to.name
-      // this.$route.name = type
-      this.columns = this.getAddForm(type)
-      this.columns = this.columns.filter(item => {
-        return item.isAdd === 1
-      })
-      // 构建增加对象
-      this.columns.forEach(item => {
-        this.fields[item.key] = ''
-      })
     },
   },
 }

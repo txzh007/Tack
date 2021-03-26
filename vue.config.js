@@ -12,8 +12,8 @@ const name = defaultSettings.title || 'Tack' // page title
 // use administrator privileges to execute the command line.
 // For example, Mac: sudo npm run
 // You can change the port by the following method:
-// port = 9527 npm run dev OR npm run dev --port = 9527
-const port = process.env.port || process.env.npm_config_port || 9527 // dev port
+// port = 8081 npm run dev OR npm run dev --port = 8081
+const port = process.env.port || process.env.npm_config_port || 8081 // dev port
 
 // gzip import
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
@@ -62,14 +62,7 @@ module.exports = {
     ],
 
     // 在这里配置表示使用cdn资源
-    externals: {
-      vue: 'Vue',
-      'vue-router': 'VueRouter',
-      axios: 'axios',
-      'element-ui': 'ELEMENT',
-      vuex: 'Vuex',
-      echarts: 'echarts',
-    },
+    externals: require('./config/cdn').externals,
   },
   chainWebpack(config) {
     config.plugin('html').tap(args => {

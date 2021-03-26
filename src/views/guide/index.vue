@@ -2,11 +2,16 @@
   <div class="app-container">
     <aside>
       {{ $t('guide.description') }}
-      <a href="https://github.com/kamranahmedse/driver.js" target="_blank">driver.js.</a>
+      <a
+        href="https://github.com/kamranahmedse/driver.js"
+        target="_blank"
+      >driver.js.</a>
     </aside>
-    <el-button icon="el-icon-question" type="primary" @click.prevent.stop="guide">
-      {{ $t('guide.button') }}
-    </el-button>
+    <el-button
+      icon="el-icon-question"
+      type="primary"
+      @click.prevent.stop="guide"
+    >{{ $t('guide.button') }}</el-button>
   </div>
 </template>
 
@@ -19,17 +24,20 @@ export default {
   name: 'Guide',
   data() {
     return {
-      driver: null
+      driver: null,
     }
   },
   mounted() {
-    this.driver = new Driver()
+    this.driver = new Driver({
+      stageBackground: 'rgba(255, 255, 255,0.6)',
+    })
   },
   methods: {
     guide() {
       this.driver.defineSteps(steps)
       this.driver.start()
-    }
-  }
+    },
+  },
 }
 </script>
+
