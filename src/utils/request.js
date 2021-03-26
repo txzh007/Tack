@@ -1,4 +1,4 @@
-import { MessageBox, Message } from 'element-ui'
+const { MessageBox, Message } = ELEMENT
 import store from '@/store'
 import { getToken } from '@/utils/auth'
 

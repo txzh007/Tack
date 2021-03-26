@@ -126,10 +126,7 @@ export default {
     cancel: 'キャンセル',
     confirm: '確認',
   },
-  example: {
-    warning:
-      '新規作成と編集画面は keep-alive を使えないです。keep-alive の include はrouteのキャッシュは使えないです。そのため、component name を使ってキャッシュさせるようにします。このようなキャッシュ機能を作りたい場合，localStorageを使う手があります。もしくは keep-alive の includeを使って、全ページキャッシュする方法はあります。',
-  },
+
   errorLog: {
     tips: '右上のbugアイコンをクリックしてください。',
     description:

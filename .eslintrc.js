@@ -10,6 +10,10 @@ module.exports = {
     es6: true,
   },
   extends: ['plugin:vue/recommended', 'eslint:recommended'],
+  // 全局变量提示
+  globals: {
+    error: true,
+  },
 
   // add your custom rules here
   //it is base on https://github.com/vuejs/eslint-config-vue
@@ -24,6 +28,7 @@ module.exports = {
         },
       },
     ],
+
     'vue/singleline-html-element-content-newline': 'off',
     'vue/multiline-html-element-content-newline': 'off',
     'vue/name-property-casing': ['error', 'PascalCase'],
