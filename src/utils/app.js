@@ -614,7 +614,7 @@ const asyncRoutes = [
   { path: "*", redirect: "/404", pid: 0, id: 76, hidden: true }
 ];
 
-var innerArr = [];
+const innerArr = [];
 function flatObj(arr, obj = {}) {
   arr.forEach(item => {
     if (Object.prototype.toString.call(item) === "[object Object]") {

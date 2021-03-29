@@ -95,7 +95,7 @@ export default {
       if (select !== undefined) {
         this.$emit('changeValue', { obj, select })
       } else {
-        var create = { type: 'create' }
+        const create = { type: 'create' }
         this.$emit('changeValue', { obj, create })
       }
     },

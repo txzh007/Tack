@@ -4,14 +4,13 @@
             {{title}}
     </div>-->
     <div class="search">
-      <slot name="search" v-if="!isAdd&&!isEdit&&!isView"></slot>
-      <slot name="add"></slot>
-      <slot name="edit"></slot>
-      <slot name="view"></slot>
+      <slot v-if="!isAdd&&!isEdit&&!isView" name="search" />
+      <slot name="add" />
+      <slot name="edit" />
     </div>
     <div class="main_content">
-      <aside v-if="false"></aside>
-      <div class="table_content" v-if="!isAdd&&!isEdit&&!isView">
+      <aside v-if="false" />
+      <div v-if="!isAdd&&!isEdit&&!isView" class="table_content">
         <el-table
           id="result"
           ref="table"
@@ -19,10 +18,10 @@
           fit
           border
           highight-current-row
-          @current-change="handleCurrentChange"
           :data="data.list"
+          @current-change="handleCurrentChange"
         >
-          <el-table-column type="index" width="50" align="center" :label="$t('no')" fixed="left"></el-table-column>
+          <el-table-column type="index" width="50" align="center" :label="$t('no')" fixed="left" />
           <span v-for="(item,$index) in columns" :key="$index">
             <el-table-column
               v-if="item.type === 'index'"
@@ -30,14 +29,14 @@
               width="50"
               align="center"
               label="No."
-            ></el-table-column>
+            />
             <el-table-column v-if="item.type === 'radio'" width="40" fixed="left">
               <template slot-scope="scope">
                 <el-radio
                   v-model="select"
                   :label="scope.$index"
                   style="color:rgba(255,255,255,0);margin-left:10px"
-                ></el-radio>
+                />
               </template>
             </el-table-column>
 
@@ -54,18 +53,18 @@
               <template slot-scope="scope">
                 <div v-if="item.render&&operation.type!==4">
                   <el-button
+                    v-for="(operation,$i) in item.render"
+                    v-show=" (operation.type===2 && roles.includes('view')) || (operation.type===3 && roles.includes('download'))"
+                    :key="$i"
                     style="display:inline-block"
                     :disabled="scope.row.statuscn&&scope.row.status!==60&&operation.type!==2?true:false"
                     :type="operation.type===1?'info':((operation.type===2 || operation.type===3)?'primary':'danger')"
-                    v-show=" (operation.type===2 && roles.includes('view')) || (operation.type===3 && roles.includes('download'))"
-                    v-for="operation in item.render"
-                    :key="operation"
                     size="small"
                     @click="clickHandler(scope.$index,scope.row,operation.type)"
-                  >{{$t(operation.label)}}</el-button>
+                  >{{ $t(operation.label) }}</el-button>
                 </div>
 
-                <div v-if="!item.render" v-text="scope.row[item.key]"></div>
+                <div v-if="!item.render" v-text="scope.row[item.key]" />
               </template>
             </el-table-column>
           </span>
@@ -75,14 +74,14 @@
         >
           <div style="float: right;margin-right:1rem;font-size:12px;">
             <el-pagination
-              @size-change="changeSize"
-              @current-change="changePage"
+              layout="total,sizes, prev, pager, next"
               :current-page="data.pageNum"
               :page-sizes="[10, 20, 30, 40,50]"
               :page-size="data.pageSize"
-              layout="total,sizes, prev, pager, next"
               :total="data.total"
-            ></el-pagination>
+              @size-change="changeSize"
+              @current-change="changePage"
+            />
           </div>
         </div>
       </div>
@@ -92,9 +91,9 @@
 
 <script>
 import common from '@/utils/curd'
-import { mapActions, mapGetters } from 'vuex'
+const { mapActions, mapGetters } = Vuex
 export default {
-  name: 'pageView',
+  name: 'PageView',
   mixins: [common],
   data() {
     return {
@@ -106,6 +105,32 @@ export default {
       currentRow: null,
     }
   },
+  computed: {
+    ...mapGetters({
+      isAdd: 'isAdd',
+      selectItems: 'selectItems',
+      isEdit: 'isEdit',
+      isView: 'isView',
+      roles: 'roles',
+    }),
+  },
+  watch: {
+    $route(to, from) {
+      const type = to.name
+      this.columns = this.getAddForm(type)
+      this.getMenuLable(to.path)
+      this.$get(`/${type}/view`, { page: 1, rows: 20 })
+    },
+    select(val) {
+      const item = this.data.list[val]
+      const { length } = this.selectItems
+      this.selectItems = this.selectItems.splice(0, length)
+      this.selectItems.push(item)
+    },
+    exportTable(val) {},
+  },
+  created() {},
+
   methods: {
     // 翻页事件
     changePage(page) {
@@ -145,31 +170,6 @@ export default {
         // 查看
       }
     },
-  },
-  created() {},
-  computed: {
-    ...mapGetters({
-      isAdd: 'isAdd',
-      selectItems: 'selectItems',
-      isEdit: 'isEdit',
-      isView: 'isView',
-      roles: 'roles',
-    }),
-  },
-  watch: {
-    $route(to, from) {
-      const type = to.name
-      this.columns = this.getAddForm(type)
-      this.getMenuLable(to.path)
-      this.$get(`/${type}/view`, { page: 1, rows: 20 })
-    },
-    select(val) {
-      const item = this.data.list[val]
-      const { length } = this.selectItems
-      this.selectItems = this.selectItems.splice(0, length)
-      this.selectItems.push(item)
-    },
-    exportTable(val) {},
   },
 }
 </script>

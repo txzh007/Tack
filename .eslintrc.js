@@ -13,6 +13,7 @@ module.exports = {
   // 全局变量提示
   globals: {
     error: true,
+    Vuex: true,
   },
 
   // add your custom rules here
